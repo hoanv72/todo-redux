@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+
 import TaskItem from "./TaskItem";
 
 const mapStateToProps = (state) => {
@@ -13,12 +14,9 @@ function TaskList({ task }) {
     <React.Fragment>
       <ul>
         {task.map((item) => (
-          <li key={item.id}>{item.title}</li>
+          <TaskItem key={item.id} item={item} />
         ))}
       </ul>
-      {/* <List>
-        <TaskItem />
-      </List> */}
     </React.Fragment>
   );
 }

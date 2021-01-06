@@ -1,8 +1,17 @@
-import { ADD_TASK } from "../constants/ActionTypes";
+import * as types from "../constants/ActionTypes";
 
-export function addTask(title) {
+export { addTask, removeTask };
+
+function addTask(title) {
   return {
-    type: ADD_TASK,
+    type: types.ADD_TASK,
     title,
+  };
+}
+
+function removeTask(id) {
+  return {
+    type: types.REMOVE_TASK,
+    id,
   };
 }
